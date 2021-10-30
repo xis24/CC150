@@ -1,8 +1,9 @@
-# non-constructible change
 
-# given an array of postive integers, find out the min number that can be created from arary
+# Given an array of positive integers, return the min
+# amount of change that you cannot create
 
 def nonConstructibleChange(coins):
+    # Write your code here.
     coins.sort()
     curSum = 0
     for coin in coins:
