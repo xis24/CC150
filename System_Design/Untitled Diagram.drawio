@@ -1,1 +1,108 @@
-<mxfile host="app.diagrams.net" modified="2021-11-02T03:43:04.509Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36" etag="kQnE4LHV-syTvlgRInGn" version="15.5.9" type="github"><diagram id="Jrz7ZLOsKkmHFo4bYg15" name="Page-1">7VnJbtswEP0aI20BA1psIznGdroALXIw0KJHWhpJRCiOSlFe+vUdUpRleWlqtEERQ5dEejPc3psRH5JBOMs3HxQrsi8YgxgEXrwZhPNBEEzuQvppgG0N+N5oUiOp4rHDWmDBf0KT6NCKx1B2EjWi0LzoghFKCZHuYEwpXHfTEhTdVQuWwhGwiJg4Rr/xWGc1ejv2Wvwj8DRrVvY9F8lZk+yAMmMxrveg8GEQzhSirp/yzQyEIa/hpR73/kx0tzEFUv/JgOkjava4yNX88/3XJ/Ep98PvQzfLionKHTipZKQ5SibctvW24ULDhlaallrhE8xQoCJcoqTwNOFCHECZzgW9+SaKUjttg1Hz7iY28RUozYn0e8FTSVjO49gEp8wBER0SaO6p2y/lw+YsEf6OXqpLwBy02lKKG9AIsu2+rlt5dyJme9KOHMZcRaW7iVvS6cHxfoEGwZEGg2AiLNMFkx0JJj8qUy6Wv2HCci7oEPcDc4QJywvLTxgahnOQAo9Qmzk7mU+KR5cMiLBSnCQJPAnr8+NoXqRjRGAQi0d1lZhdq3T5ZrRLvfV3j/5k/LY9LT2l5vew4YVorqmp8euk6/D0FK0KgSym09OHRLrHFTfzeUWGGstnCFqqQyTmq2tm7Jm62CtFmtcbjX02vqTsvKq0G4zs/AWoBFVuVgKmooyurcBbshJIJg9lI5LVLAY0NxnXAvZFs3L0Cr2UQnT7CzTdgjqzsIn2/L8k/7Qz0wYJ2C4gl1byUnOZGhESa+aKva+Xlyg0DcTsrUki2bbCQkArZS3iWdX+mWdZZ1zDwvIWztfkbn/nU5AiibD2LiMM5F9aFedNJsfeJDjlTfzwpcxJeGROiKnh9ZvExu1tD1j/by5x3LvE3iX2LvE13oG9S3xVCvUusXeJvUu8yJxMzpoT0wDtdT7fr4oTheIlNZEt5trDVait/Jmdr1PUzxTwO0ME8SAMaWzFuGBLUyyH953Jq1tfMA0y2p5OcfVZJ3g8aasuRnmj7acd2g851aKJMaNQxm0hmGH6xpQyPp1eY7ddBYLb3dpRzZRlhpUwvSLRrLcEu/NSn7/DSddai+tqgWbAgV0fHbeEf3eqJfzLW4Je27/a29je/z7Ch18=</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-11-02T03:48:25.009Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36" etag="2ifoAn7b4QnuWH0-b1XC" version="15.5.9" type="github">
+  <diagram id="Jrz7ZLOsKkmHFo4bYg15" name="Page-1">
+    <mxGraphModel dx="693" dy="1046" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BOotaOSmrDLAVklIm13Y-1" value="functional" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+          <mxGeometry x="20" y="20" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BOotaOSmrDLAVklIm13Y-2" value="&lt;span style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; color: rgb(4 , 81 , 165)&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace&quot;&gt; upload/download/view photos&lt;/span&gt;&lt;br&gt;&lt;div style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace&quot;&gt;&lt;span style=&quot;color: #0451a5&quot;&gt;-&lt;/span&gt; user can perform searches based on photo/video titles&lt;/div&gt;&lt;div style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace&quot;&gt;&lt;span style=&quot;color: #0451a5&quot;&gt;-&lt;/span&gt; user can follow other users&lt;/div&gt;&lt;div style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace&quot;&gt;&lt;span style=&quot;color: #0451a5&quot;&gt;-&lt;/span&gt; news feed consisting of top photos from all the people user follows&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" parent="1" vertex="1">
+          <mxGeometry y="60" width="200" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="BOotaOSmrDLAVklIm13Y-3" value="non-functional" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+          <mxGeometry x="40" y="200" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BOotaOSmrDLAVklIm13Y-5" value="&lt;span style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; color: rgb(4 , 81 , 165)&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace&quot;&gt; upload/download/view photos&lt;/span&gt;&lt;br&gt;&lt;div style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace&quot;&gt;&lt;span style=&quot;color: #0451a5&quot;&gt;-&lt;/span&gt; user can perform searches based on photo/video titles&lt;/div&gt;&lt;div style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace&quot;&gt;&lt;span style=&quot;color: #0451a5&quot;&gt;-&lt;/span&gt; user can follow other users&lt;/div&gt;&lt;div style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace&quot;&gt;&lt;span style=&quot;color: #0451a5&quot;&gt;-&lt;/span&gt; news feed consisting of top photos from all the people user follows&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" parent="1" vertex="1">
+          <mxGeometry y="60" width="200" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="BOotaOSmrDLAVklIm13Y-6" value="&lt;font color=&quot;#0451a5&quot; face=&quot;menlo, monaco, courier new, monospace&quot;&gt;* highly available&lt;br&gt;* low latency&lt;br&gt;* consistency if user don&#39;t see photo for a while; it&#39;s ok&lt;br&gt;* highly reliable; photo should not be lost&lt;br&gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" parent="1" vertex="1">
+          <mxGeometry x="10" y="240" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-1" value="Photo" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="390" width="180" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-2" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-1">
+          <mxGeometry y="30" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-3" value="PK" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-2">
+          <mxGeometry width="30" height="30" as="geometry">
+            <mxRectangle width="30" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-4" value="PhotoID: int" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-2">
+          <mxGeometry x="30" width="150" height="30" as="geometry">
+            <mxRectangle width="150" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-5" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-1">
+          <mxGeometry y="60" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-6" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-5">
+          <mxGeometry width="30" height="30" as="geometry">
+            <mxRectangle width="30" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-7" value="UserID: int" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-5">
+          <mxGeometry x="30" width="150" height="30" as="geometry">
+            <mxRectangle width="150" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-8" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-1">
+          <mxGeometry y="90" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-9" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-8">
+          <mxGeometry width="30" height="30" as="geometry">
+            <mxRectangle width="30" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-10" value="PhotoPath: varchar (256)" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-8">
+          <mxGeometry x="30" width="150" height="30" as="geometry">
+            <mxRectangle width="150" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-11" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-1">
+          <mxGeometry y="120" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-12" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-11">
+          <mxGeometry width="30" height="30" as="geometry">
+            <mxRectangle width="30" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-13" value="PhotoLatitude: int " style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-11">
+          <mxGeometry x="30" width="150" height="30" as="geometry">
+            <mxRectangle width="150" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-14" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="1">
+          <mxGeometry x="20" y="535" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-15" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-14">
+          <mxGeometry width="30" height="30" as="geometry">
+            <mxRectangle width="30" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-16" value="PhotoLongtitude: int " style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-14">
+          <mxGeometry x="30" width="150" height="30" as="geometry">
+            <mxRectangle width="150" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-17" value="UserLongtitude: int " style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="50" y="565" width="150" height="30" as="geometry">
+            <mxRectangle width="150" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-20" value="UserLatitude: int " style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="50" y="595" width="150" height="30" as="geometry">
+            <mxRectangle width="150" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-21" value="CreateDate: int " style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="50" y="625" width="150" height="30" as="geometry">
+            <mxRectangle width="150" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
