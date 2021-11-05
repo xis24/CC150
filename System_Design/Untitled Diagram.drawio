@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-11-02T03:56:15.952Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36" etag="ms6Izw9OJizkUIzcyk2u" version="15.5.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-04T22:56:37.260Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36" etag="S_im37jMDe3t-h3TQQTC" version="15.5.9" type="github">
   <diagram id="Jrz7ZLOsKkmHFo4bYg15" name="Page-1">
-    <mxGraphModel dx="693" dy="1046" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1046" dy="1046" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -16,7 +16,7 @@
         <mxCell id="BOotaOSmrDLAVklIm13Y-5" value="&lt;span style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; color: rgb(4 , 81 , 165)&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace&quot;&gt; upload/download/view photos&lt;/span&gt;&lt;br&gt;&lt;div style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace&quot;&gt;&lt;span style=&quot;color: #0451a5&quot;&gt;-&lt;/span&gt; user can perform searches based on photo/video titles&lt;/div&gt;&lt;div style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace&quot;&gt;&lt;span style=&quot;color: #0451a5&quot;&gt;-&lt;/span&gt; user can follow other users&lt;/div&gt;&lt;div style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace&quot;&gt;&lt;span style=&quot;color: #0451a5&quot;&gt;-&lt;/span&gt; news feed consisting of top photos from all the people user follows&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" parent="1" vertex="1">
           <mxGeometry y="60" width="200" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="BOotaOSmrDLAVklIm13Y-6" value="&lt;font color=&quot;#0451a5&quot; face=&quot;menlo, monaco, courier new, monospace&quot;&gt;* highly available&lt;br&gt;* low latency&lt;br&gt;* consistency if user don&#39;t see photo for a while; it&#39;s ok&lt;br&gt;* highly reliable; photo should not be lost&lt;br&gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" parent="1" vertex="1">
+        <mxCell id="BOotaOSmrDLAVklIm13Y-6" value="&lt;font color=&quot;#0451a5&quot; face=&quot;menlo, monaco, courier new, monospace&quot;&gt;* highly available&lt;br&gt;* low latency&lt;br&gt;* consistency can take a hit if user don&#39;t see photo for a while; it&#39;s ok&lt;br&gt;* highly reliable; photo should not be lost&lt;br&gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" parent="1" vertex="1">
           <mxGeometry x="10" y="240" width="190" height="110" as="geometry" />
         </mxCell>
         <mxCell id="pdLOpovIGUewlG8JMeMx-1" value="Photo" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
@@ -172,6 +172,80 @@
         </mxCell>
         <mxCell id="pdLOpovIGUewlG8JMeMx-39" value="Photos will be saved to S3 or HDFS" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="20" y="860" width="180" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-41" value="Capacity estimate" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="230" y="20" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-42" value="&lt;ul&gt;&lt;li&gt;DAU: 10 MM&lt;/li&gt;&lt;li&gt;Post: 5 pics&lt;/li&gt;&lt;li&gt;pic size 200 KB&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;read: 5 times per day to load the timeline&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;storage:&amp;nbsp;&lt;/div&gt;&lt;div&gt;10MM * 5 * 200 KB ~= 10 TB&lt;/div&gt;&lt;div&gt;each year:&lt;/div&gt;&lt;div&gt;10TB * 400 = 4 PB&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;write:&lt;/div&gt;&lt;div&gt;10MM * 5 / 100, 000 = 500, 000 qps&lt;/div&gt;&lt;div&gt;each machine 500 qps&amp;nbsp;&lt;/div&gt;&lt;div&gt;~ 1k machines&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="210" y="40" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-53" value="UserFollow" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="450" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-54" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-53">
+          <mxGeometry y="30" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-55" value="PK" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-54">
+          <mxGeometry width="30" height="30" as="geometry">
+            <mxRectangle width="30" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-56" value="UserID1: int&#xa;UserID2: int" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;" vertex="1" parent="pdLOpovIGUewlG8JMeMx-54">
+          <mxGeometry x="30" width="150" height="30" as="geometry">
+            <mxRectangle width="150" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdLOpovIGUewlG8JMeMx-69" target="pdLOpovIGUewlG8JMeMx-70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-69" value="" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="770" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdLOpovIGUewlG8JMeMx-70" target="pdLOpovIGUewlG8JMeMx-78">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-70" value="upload image request" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="410" y="780" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="pdLOpovIGUewlG8JMeMx-71" target="pdLOpovIGUewlG8JMeMx-76">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-71" value="download image request" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="410" y="910" width="65" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-76" value="" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="890" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-78" value="image storage/disk" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="760" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-79" value="image metadata" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="900" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-95" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="pdLOpovIGUewlG8JMeMx-79">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="475" y="930" as="sourcePoint" />
+            <mxPoint x="590" y="840" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="505" y="930" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-99" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.033;entryY=0.067;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pdLOpovIGUewlG8JMeMx-70" target="pdLOpovIGUewlG8JMeMx-79">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="880" as="sourcePoint" />
+            <mxPoint x="580" y="880" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="540" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdLOpovIGUewlG8JMeMx-100" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.877;exitY=0.025;exitDx=0;exitDy=0;entryX=-0.017;entryY=0.883;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="pdLOpovIGUewlG8JMeMx-71" target="pdLOpovIGUewlG8JMeMx-78">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="482.5" y="850" as="sourcePoint" />
+            <mxPoint x="617.5" y="850" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
