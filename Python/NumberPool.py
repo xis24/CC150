@@ -13,14 +13,21 @@
 # checkin(1)
 # checkout gives 1 now
 
+# #######Frequency of checkout and checkin########
+
+
 class NumberPool:
 
     def __init__(self):
         # largest checkout number
-        self.mmax_chk_out = 1
+        self.mmax_chk_out = 0
         # min heap of numbers that have been checked back in
         self.min_heap = []
 
     def checkout(self):
+        if not self.min_heap:
+            self.mmax_chk_out += 1
+            return self.mmax_chk_out
+        return self.min_heap[0]
 
     def checkin(self, num):

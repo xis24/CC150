@@ -96,3 +96,76 @@ We may implement a pull-based model for all the users who have a high number of 
 
 The newsfeed of users can be a large response. So, we may design the API to return a single page of the feed. Let’s say we are sending at most 50 posts every time a feed request is made.
 The user may send another request for the next page of feeds for the next time. And within that period, if there is not enough feed, Newsfeed may generate the next page. This technique is called pagination.
+
+## NewsFeed APIs
+
+### Feed publish API
+
+- TO publish a post, a HTTP POST request will be sent to server,
+
+### Newsfeed retrieval API
+
+### Fanout service building news feed
+
+fanout is the process of delivering a post to all friends. Two types:
+
+- fanout on write (push mode)
+- fanout on read (pull mode)
+
+_Fanout on write_ (i.e Push) :
+pros
+
+- news feed is genreated in real-time and can be pushed to friends immediately
+- fetching news feed is fast because news feed is pre-computed during write time
+
+cons:
+
+- If user has many friends, fetching friends list and generating news fees for all of them are slow and time consuming. It's called hotkey problem
+- for inactive users, pre-computing news feed are waste of resources
+
+_Fanout on read_ (i.e Poll)
+news feed is generated during the read time. This is on-demand model. Recent posts are pulled when a user loads her home page
+pros:
+
+- for inactive users it works better because it will not waste resources
+- Data is not pushed to friends so there is no hot key problem
+
+cons:
+
+- fetching the news feed is slow as news feed is not pre-computed
+- might create huge amount of query if users are pull together
+
+The solution we have, is hybrid model
+
+- fetching the newsfeed fast is crucial, we used a push mode for majority of users.
+- for celeberities, we let followers pull news content on-demand t avoid system overload
+- consistent hashing is a useful technique to reduce the hotkey problem as it helps to distribute request/data more evently
+
+The fanout service works as follows:
+
+1. Fetch friends IDs from graph database
+2. Get friends info from the user cache. The system filters out friends based on user settings. For example, if you mute someon, her post will not show up in your news feed. Another reason that a post might not be shown is that a user could selectively share information with set of friends
+3. send friends list and new post ID to the message queue.
+4. Fanout workers fetch data from the message queue and store news feed data in the news feed cache. WE only store <post_id, user_id>. Whenever a new post is made, it will append to a table. The memory consumption can be large if we stord entire user and post objects in the cache. Thus only ID are stored. Since most of users are interested in recent post, the cache miss is low
+5. Store <post_id, user_id> in news feed cache.
+
+### Newfeed retrieval
+
+1. A user sends a request to retrieve her news feed
+2. The load balancer distributed requests to web servers
+3. web servers call the news feed service to fetch news feeds
+4. news feed service gets a list of post ID from news feed cache
+5. A users' news feed contains more a list of feeds ID, it contains username, profile picture, post content, post image etc. Thus, news feed fetch complete user and post objects from both user cache and post cache.
+6. The fully hydrated news feed is retuend in JSON format back to the client for rendering.
+
+### Cache architecture
+
+Cache is extremely important for a news feed system
+
+1. News feed: news feed (stores ID of news feeds)
+2. Content: hot cache, normal (every post data, poppular contetn is stored in hot cache)
+3. Social graph: follower, following (stores user relationship data)
+4. Action: liked, replied, others (it stores info about whether a user liked a post, replied a post or other actions)
+5. Counters: like counter, reply counter, other counters (all kinds of counters)
+
+![diagram](new_feed.png)
