@@ -4,14 +4,12 @@ import collections
 
 
 class ShortestDistanceFromAllBuilding:
-    # approach one, from every empty land, do BFS to find all houses,
-    # get the min steps
+    # approach one, from every empty land, do BFS to find all houses, get the min steps
     # NEED TO HAVE VISITED MATRIX
     # Time complexity O(n^2 * M^2)
     # Space O(n * m)
 
-    # approach two, from every house, do BFS and mark matrix with
-    # (steps, number of house that can be reached)
+    # approach two, from every house, do BFS and mark matrix with (steps, number of house that can be reached)
     # In the end, traverse again the matrix and find the min value
     # with number of buildings
     def shortestDistance(self, grid: List[List[int]]) -> int:
@@ -54,10 +52,8 @@ class ShortestDistanceFromAllBuilding:
         return 0 <= x < len(grid) and 0 <= y < len(grid[0]) and grid[x][y] == 0 and distance[x][y][1] == count
 
     # approach three
-    # 1. In stead of using visited matrix, we can decrement empty land (0)
-    # by 1.
-    # 2. After each BFS, we decrement emptyLandValue (initially as 0)
-    # by 1. Then we will traverse all empty land cell with values equal
+    # 1. In stead of using visited matrix, we can decrement empty land (0) by 1.
+    # 2. After each BFS, we decrement emptyLandValue (initially as 0) by 1. Then we will traverse all empty land cell with values equal
     # to emptyLandValue.
     # 3. After the last BFS, if min sitance is MAX, we return -1
     # 4. else we return min distance
