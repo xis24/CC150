@@ -12,6 +12,9 @@ import collections
 # largest timestamp_prev. If there are no values, it returns "".
 
 
+# constraint
+# all timestamp are strictly increasing
+
 class TimeBasedKeyValueStore:
 
     def __init__(self) -> None:
