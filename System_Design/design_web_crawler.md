@@ -61,3 +61,64 @@ BFS is used by web crawlers and is implemented by queue. Two problems could aris
 
 - Most links for the same web page are linked back to the same host. The host will be flooded with requests. Thus impolite
 - The standard BFS doesn't take the priority of a URL into consideration. not very page has the salve level of quality and importantce. We may want to prioritize based on page ranks
+
+URL Frontier
+
+is a data strucutre that stores URLs to be downloaded. The URL frontier is an important component to ensure politeness, URL prioritization and freshness.
+
+- Front queue: manage prioritization
+- back queue: maange politeness
+
+- Politeness
+  the general idea of enfocing politeness is to download one page at a time from the same host. A delay can add between two downloaded tasks. The politeness constraint is implemented by maintain a mapping from website hostnames to download threads. Each downloader thread has a separate FIFO queue and only downloads URLs obtained from that queue.
+
+  ```
+  queue router ------> mapping table
+
+            b1| b2| b3|
+            x| x| x|
+            x| x| x|
+            query selector
+
+    worker      worker     worker
+    thread1     thread2    thread3
+  ```
+
+  - queue router: ensures each queue (b1, b2,..., bn) only contains URLs from the same host
+  - mapping table: it maps each host to a queue
+  - FIFO queues b1, b2 to bn: each queue contains URLs from the same host
+  - Queue selector: each worker thread is mapped to a FIFO queue, and it only downloads URLs from that queue. it manages queue selection logic
+  - Worker thread downloads pages one by one from the same host. A delay can be added between two download tasks.
+
+- Priority
+  - prioritizer: takes URLs as input and computes the priorites
+  - Queue f1 to fn: each queue has an assigned priority. queue with high priority are slected wit hhigher probability
+  - queue selector: randomly choose a queue with a bias towards quues with higher priority
+
+Storage for URL Frontier
+
+since memory is expensive and the number of URLs are huge. Putting to memory is not durable or scalable. Keeping in the disk is undesirable either b/c it's slow, and it can be bottleneck for crawler.
+
+we will take a hybrid mode. Maintains a buffer in memory to enqueu and dequeue, and periodically write to the disk
+
+Performance Optimization
+
+1. Distributed crawl
+   crawl jobs are distributed into multiple servers, and each server runs multiple threads. The URL space is partitioned into smaller peices; each downloader is responsible for a subset of URLs.
+
+2. Cache DNS Resolver
+   It could take from 10ms to 200 ms. To avoid this, we need keep a DNS cache for speed optimization. Our DNS cache keeps the domain name to IP address mapping and is updated periodically by cron jobs
+
+3. Locality
+   Distribute crawl servers geographically. When crawl servers are close to website hosts, cralers experience faster download time.
+
+4. Short timeout
+
+If host doesn't response within a prefined time, the craler will stop the job and crawl other pages
+
+Robustness
+
+- consistent hashing: this helps to distribute loads among downloaders. A new downloader server can be added or removed using consistent hashing.
+- save crawl states and data: to guard against failures, crawl states and data are written to a storage system. A distributed crawl can be restarted easily by loading saved states and data
+- handle exceptions
+- data validation
