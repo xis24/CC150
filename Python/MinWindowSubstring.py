@@ -8,23 +8,23 @@ class MinWindowSubstring:
     # sliding window
     def minWindow(self, s: str, t: str) -> str:
         counterMap = collections.Counter(t)
-        uniqueCount = len(counterMap)
+        dictionCounter = len(counterMap)
 
         left = 0
         right = 0
         minLen = math.inf
-        start = left
+        start = left  # start position of sequence
         while right < len(s):
             if s[right] in counterMap:
                 counterMap[s[right]] -= 1
                 if counterMap[s[right]] == 0:
-                    uniqueCount -= 1
+                    dictionCounter -= 1
 
-            while uniqueCount == 0:
+            while dictionCounter == 0:
                 if s[left] in counterMap:
                     counterMap[s[left]] += 1
                     if counterMap[s[left]] > 0:
-                        uniqueCount += 1
+                        dictionCounter += 1
 
                     if right - left + 1 < minLen:
                         minLen = right - left + 1
@@ -39,3 +39,4 @@ if __name__ == '__main__':
     obj = MinWindowSubstring()
     print(obj.minWindow('ADOBECODEBANC', 'ABC'))
     print(obj.minWindow('ACBBECODEBANC', 'ABBC'))
+    print(obj.minWindow('BAOBBCABBC', 'ABBC'))
