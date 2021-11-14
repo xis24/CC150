@@ -1,6 +1,17 @@
-# Possible followup questions:
-# How do you handle boolean logic (current solution put all filters in OR)
-# How do you handle an output that would not fit in memory
+'''
+ Possible followup questions:
+ How do you handle boolean logic (current solution put all filters in OR)
+ How do you handle an output that would not fit in memory
+    1. in stead of return a list of files, pass in an handler (or simply callback), 
+        interface FileSearchHandler {
+            public void onFileFound(File f);
+        }
+        where the client can handle it based on its needs
+    2. Instead of returning a List, you can pass in a BlockingQueue
+        client handle based on its needs. The client will initialize the queue with a size it can take.
+        User is supposed to consume the queue. If quue get full, the file search will lock waiting for the queue
+        to consumed
+'''
 
 
 from typing import List
