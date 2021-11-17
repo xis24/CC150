@@ -118,4 +118,29 @@ class MergeTwoSortedLists:
         node.random = self.copyDfs(node.random, visited)
         return node
 
-    # LFU
+    # swapping nodes in a linked list
+    # swap kth node from the head, and kth from the back
+
+    def swapNodes(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        pre_left = pre_right = dummy = ListNode(next=head)
+        left = right = head
+
+        # find the kth element
+        for i in range(k - 1):
+            pre_left = left
+            left = left.next
+
+        lead = left
+        while lead.next:
+            pre_right = right
+            right = right.next
+            lead = lead.next
+        # check if they are same node
+        if left == right:
+            return head
+        # 1 2 3 4 5 6
+        #   L     R
+        # PL    PR
+        pre_left.next, pre_right_next = right, left
+        right.next, left.next = left.next, right.next
+        return dummy.next
