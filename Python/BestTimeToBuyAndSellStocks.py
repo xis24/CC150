@@ -1,7 +1,23 @@
 from typing import List
+import math
 
 
 class BestTimeToBuyAndSellStocks:
+
+    '''
+    Best Time to buy and stocks
+    You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+    '''
+
+    def maxProfit(self, prices: List[int]) -> int:
+        minPrice = math.inf  # you want to have min price so that you buy the lowest
+        profit = 0
+        for price in prices:
+            if price < minPrice:
+                minPrice = price
+            elif price - minPrice > profit:
+                profit = price - minPrice
+        return profit
 
     # Best time to buy and stocks ii
     #
@@ -10,6 +26,7 @@ class BestTimeToBuyAndSellStocks:
     # However, you can buy it then immediately sell it on the same day.
     #
     # THERE IS NO LIMIT ON THE NUMBER OF TRANSACTIONS !!!
+
     def maxProfit(self, prices):
         profit = 0
         i = 0
