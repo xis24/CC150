@@ -12,6 +12,8 @@ class DisjointSet:
     def __len__(self):
         return self.count
 
+    # without path compression, find is O(n), since you need to iterate through to find parent
+    # with it, it's amortized O(1)
     def find(self, p):
         while p != self.parent[p]:
             # path compression
