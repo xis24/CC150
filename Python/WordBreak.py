@@ -156,3 +156,9 @@ class WordBreak:
                 return True
         memo[word] = False
         return False
+
+
+if __name__ == '__main__':
+    obj = WordBreak()
+    obj.wordBreak2RegularMemo(
+        "catsanddog", ["cat", "cats", "and", "sand", "dog"])
