@@ -94,3 +94,34 @@ class MergeTreeInStream:
             else:
                 res.append(rres)
         return res
+
+    # Given a list of interval already sorted by first index
+    # insert an interval to the list, merge it if necessary
+    # return a new list of intervals
+
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        new_start, new_end = newInterval
+        ret = []
+        idx, n = 0, len(intervals)
+
+        # before the intersection of interval
+        while idx < n and new_start > intervals[idx][0]:
+            ret.append(intervals[idx])
+            idx += 1
+
+        # add interval if necessary
+        if not ret or ret[-1][1] < new_start:
+            ret.append(newInterval)
+        else:
+            ret[-1][1] = max(ret[-1][1], new_end)
+
+        # add the rest
+        while idx < n:
+            interval = intervals[idx]
+            start, end = interval
+            idx += 1
+            if ret[-1][1] < start:
+                ret.append(interval)
+            else:
+                ret[-1][1] = max(ret[-1][1], end)
+        return ret
