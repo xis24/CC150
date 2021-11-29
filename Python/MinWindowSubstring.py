@@ -54,6 +54,31 @@ class SlindingWindowMax:
         return ret
 
 
+class FindAllAnagramsInAString:
+
+    # return the start index of anagram of p in S
+    # Time: O(n)
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        sLen = len(s)
+        pLen = len(p)
+        if sLen < pLen:
+            return []
+        s_count = [0] * 26
+        p_count = [0] * 26
+        ret = []
+        for char in p:
+            p_count[ord(char) - ord('a')] += 1
+
+        for i in range(sLen):
+            s_count[ord(s[i]) - ord('a')] += 1
+            # check the window size
+            if i >= pLen:
+                s_count[ord(s[i - pLen]) - ord('a')] -= 1
+            if s_count == p_count:
+                ret.append(i - pLen + 1)
+        return ret
+
+
 if __name__ == '__main__':
     obj = MinWindowSubstring()
     print(obj.minWindow('ADOBECODEBANC', 'ABC'))
