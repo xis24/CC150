@@ -1,4 +1,5 @@
 from typing import List
+import heapq
 
 
 class MergeInterval:
@@ -125,3 +126,39 @@ class MergeTreeInStream:
             else:
                 ret[-1][1] = max(ret[-1][1], end)
         return ret
+
+    # meeting room ii
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        intervals.sort()
+        rooms = [intervals[0][1]]
+
+        for i in range(1, len(intervals)):
+            start, end = intervals[i]
+            if rooms[0] < start:
+                heapq.heappushpop(rooms, end)
+            else:
+                heapq.heappush(rooms, end)
+        return len(rooms)
+
+    # car pooling problem
+    # [passenger, from, to]
+    # return True if we can pickup and dropoff all passengers
+    # O(nlogn)
+
+    # if there is constraint on the trip values, we can use bucket sort
+    # create a timestamp with that value, and do the similar thing as below
+    # Time O(max(N, 1001))
+    # Space O(1001) = O(1)
+
+    def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
+        timestamp = []
+        for trip in trips:
+            timestamp.append([trip[1], trip[0]])
+            timestamp.append([trip[2], -trip[1]])
+        timestamp.sort()
+        used_capacity = 0
+        for _, passenger_change in timestamp:
+            used_capacity += passenger_change
+            if used_capacity > capacity:
+                return False
+        return True

@@ -1,5 +1,6 @@
 import collections
 import math
+from typing import List
 
 
 class MinWindowSubstring:
@@ -33,6 +34,24 @@ class MinWindowSubstring:
             right += 1
 
         return "" if min == math.inf else s[start:start + minLen]
+
+
+class SlindingWindowMax:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        deque = collections.deque([])
+        ret = []
+
+        for idx, num in enumerate(nums):
+            while deque and nums[deque[-1]] < num:
+                deque.pop()
+            deque.append(idx)
+
+            if deque[0] == idx - k:
+                deque.popleft()
+
+            if idx >= k - 1:
+                ret.append(nums[deque[0]])
+        return ret
 
 
 if __name__ == '__main__':
