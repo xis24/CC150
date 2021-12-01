@@ -1,7 +1,11 @@
+from typing import List
+
+
 class QuickSelect:
 
     def quickSelect(self, nums, k):
         self._quickSelect(nums, 0, len(nums) - 1, k)
+        print(nums[len(nums) - k])
         return nums[:k]
 
     def _quickSelect(self, nums, left, right, k):
@@ -69,9 +73,34 @@ class QuickSelect:
                 ret.append(b[index_b])
         return ret
 
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        return self.quickselect(nums, 0, len(nums) - 1, k)
+
+    def quickselect(self, nums, left, right, k):
+        p = self.partition(nums, left, right)
+        if p == k - 1:
+            return nums[p]
+        elif p < k:
+            return self.quickselect(nums, p + 1, right, k)
+        else:
+            return self.quickselect(nums, left, p - 1, k)
+
+    def partition(self, nums, left, right):
+        pivot = nums[right]
+        index = left
+
+        for i in range(left, right):
+            if nums[i] > pivot:
+                nums[index], nums[i] = nums[i],  nums[index]
+                index += 1
+
+        nums[index], nums[right] = nums[right], nums[index]
+        return index
+
 
 if __name__ == '__main__':
     obj = QuickSelect()
-    print(obj.quickSelect([7, 4, 6, 3, 9, 1], 2))
-    print(obj.quickSort([7, 4, 6, 3, 9, 1]))
-    print(obj.mergeSort([7, 4, 6, 3, 9, 1]))
+    # print(obj.quickSelect([7, 4, 6, 3, 9, 1], 2))
+    # print(obj.quickSort([7, 4, 6, 3, 9, 1]))
+    # print(obj.mergeSort([7, 4, 6, 3, 9, 1]))
+    print(obj.findKthLargest([3, 2, 1, 5, 6, 4], 2))

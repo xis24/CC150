@@ -109,12 +109,50 @@ class ShortedArrayToRemoveToMakeSorted:
         return minLen
 
 
-if __name__ == '__main__':
-    obj = Monostack()
-    nums = [2, 3, 5, 1, 0, 7, 3]
-    print(obj.nextLargerElement(nums))
-    print(obj.nextGreaterElements(nums))
+class SumOfSubarrayMinimums:
+    '''
+    Given an array of integers arr, find the sum of min(b), where b ranges over every (contiguous) subarray of arr. Since the answer may be large, return the answer modulo 109 + 7.
 
-    obj2 = ShortedArrayToRemoveToMakeSorted()
-    print(obj2.findLengthOfShortestSubarray([1, 2, 3, 10, 4, 2, 3, 5]))
-    print(obj2.findLengthOfShortestSubarray([1, 2, 3]))
+    '''
+
+    def sumSubarrayMins(self, arr: List[int]) -> int:
+        arr = [0] + arr
+        ret = [0] * len(arr)
+        stack = [0]
+
+        for i in range(len(arr)):
+            while arr[stack[-1]] > arr[i]:
+                stack.pop()
+            j = stack[-1]
+            ret[i] = ret[j] + (i - j) * arr[i]
+            stack.append(i)
+        return sum(stack) % (10**9 + 7)
+
+
+class NextLargerElement:
+
+    def getNextLargerElement(self, nums):
+        ret = [0] * len(nums)
+        stack = []
+
+        for idx, num in enumerate(nums):
+            while stack and nums[stack[-1]] < num:
+                top = stack.pop()
+                ret[top] = nums[idx]
+            stack.append(idx)
+        return ret
+
+
+if __name__ == '__main__':
+    # obj = Monostack()
+    nums = [2, 3, 5, 1, 0, 7, 3]
+    #       1  5  3  3  0  3  0
+    # print(obj.nextLargerElement(nums))
+    # print(obj.nextGreaterElements(nums))
+
+    # obj2 = ShortedArrayToRemoveToMakeSorted()
+    # print(obj2.findLengthOfShortestSubarray([1, 2, 3, 10, 4, 2, 3, 5]))
+    # print(obj2.findLengthOfShortestSubarray([1, 2, 3]))
+
+    obj3 = NextLargerElement()
+    print(obj3.getNextLargerElement(nums))
