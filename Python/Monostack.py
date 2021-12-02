@@ -3,6 +3,13 @@ from typing import List
 
 class Monostack:
 
+    '''
+    The next greater element of some element x in an array is the first greater element that is to the right of x in the same array.
+    You are given two distinct 0-indexed integer arrays nums1 and nums2, where nums1 is a subset of nums2.
+    For each 0 <= i < nums1.length, find the index j such that nums1[i] == nums2[j] and determine the next greater element of nums2[j] in nums2. If there is no next greater element, then the answer for this query is -1.
+    Return an array ans of length nums1.length such that ans[i] is the next greater element as described above.
+    '''
+
     def nextLargerElement(self, nums):
         stack = []
         hashmap = {}
@@ -141,6 +148,44 @@ class NextLargerElement:
                 ret[top] = nums[idx]
             stack.append(idx)
         return ret
+
+
+class LargestRectangleHistogram:
+    # Divide and conquer
+    # Time: O(n log n)
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        def divide_conquer(heights, start, end):
+            if start > end:
+                return 0
+            min_index = start
+            for i in range(start, end + 1):
+                if heights[min_index] > heights[i]:
+                    min_index = i
+            return max(
+                heights[min_index] * (end - start + 1),
+                divide_conquer(heights, start, min_index - 1),
+                divide_conquer(heights, min_index + 1, end),
+            )
+        return divide_conquer(heights, 0, len(heights) - 1)
+
+    # Time: O(N)
+    #
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        stack = [-1]
+        max_area = 0
+
+        for idx, h in enumerate(heights):
+            while stack[-1] != -1 and heights[stack[-1]] >= h:
+                currentHeight = h - heights[stack.pop()]
+                width = idx - stack[-1] - 1
+                max_area = max(max_area, currentHeight * width)
+
+        # this actually calculates the area of min height during the traverse
+        while stack[-1] != -1:
+            currentHeight = heights[stack.pop()]
+            width = len(heights) - stack[-1] - 1
+            max_area = max(max_area, currentHeight * width)
+        return max_area
 
 
 if __name__ == '__main__':

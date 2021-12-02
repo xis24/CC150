@@ -1,3 +1,9 @@
+import collections
+
+# Input: sky is the blue
+# Output: blue  the is sky
+
+
 class ReverseWordsInString:
     def reverseWords(self, s: str) -> str:
         l = self.trim_spaces(s)
@@ -45,3 +51,26 @@ class ReverseWordsInString:
             # move to the next word
             start = end + 1
             end += 1
+
+# another way is to use deque, and append each word to the left, and join them together in the end
+    def reverseWords(self, s: str) -> str:
+        left = 0
+        right = len(s) - 1
+
+        while left <= right and s[left] == ' ':
+            left += 1
+
+        while left <= right and s[right] == ' ':
+            right -= 1
+
+        deque = collections.deque([])
+        word = []
+        while left <= right:
+            if s[left] == ' ' and word:
+                deque.appendleft(''.join(word))
+                word = []
+            elif s[left] != ' ':
+                word.append(s[left])
+            left += 1
+        deque.appendleft(''.join(word))
+        return ' '.join(deque)
