@@ -1,2 +1,5 @@
 # ignore these files
 System_Design/Mock_Interview_Summary.md
+Python/cb/*
+Python/sp/*
+Python/fb/*

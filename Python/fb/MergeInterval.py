@@ -162,3 +162,22 @@ class MergeTreeInStream:
             if used_capacity > capacity:
                 return False
         return True
+
+
+class IntervalListIntersection:
+    def intervalIntersection(self, firstList: List[List[int]], secondList: List[List[int]]) -> List[List[int]]:
+        ret = []
+        i = 0
+        j = 0
+
+        while i < len(firstList) and j < len(secondList):
+            cur_interval = [max(firstList[i][0], secondList[j][0]),
+                            min(firstList[i][1], secondList[j][1])]
+
+            if cur_interval[0] <= cur_interval[1]:
+                ret.append(cur_interval)
+            if firstList[i][0] <= secondList[j][0]:
+                i += 1
+            else:
+                j += 1
+        return ret

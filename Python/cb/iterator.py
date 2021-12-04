@@ -62,7 +62,7 @@ class OddIterator:
 
 
 class NegationIterator:
-    def __init(self, iterator):
+    def __init__(self, iterator):
         self.iter = iterator
 
     # negate
