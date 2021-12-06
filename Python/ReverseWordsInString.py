@@ -74,3 +74,8 @@ class ReverseWordsInString:
             left += 1
         deque.appendleft(''.join(word))
         return ' '.join(deque)
+
+
+if __name__ == '__main__':
+    obj = ReverseWordsInString()
+    print(obj.reverseWords("++hello Word++"))
